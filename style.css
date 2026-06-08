@@ -102,11 +102,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer-logo-img { height: 80px; }
 
 .hero-logo-wrap {
+  position: relative;
   margin-bottom: 1rem;
   width: clamp(220px, 32vw, 380px);
   height: clamp(220px, 32vw, 380px);
 }
 #hero-logo-canvas {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: block;
@@ -114,6 +117,23 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   cursor: grab;
 }
 #hero-logo-canvas:active { cursor: grabbing; }
+
+/* Static fallback shown until/unless WebGL renders the spinning logo */
+.hero-logo-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 40px rgba(91,141,184,0.45));
+  animation: heroPulse 4s ease-in-out infinite;
+}
+.webgl-ok .hero-logo-fallback { display: none; }
+@keyframes heroPulse {
+  0%, 100% { filter: drop-shadow(0 0 25px rgba(91,141,184,0.45)); }
+  50%       { filter: drop-shadow(0 0 55px rgba(127,179,216,0.85)); }
+}
 
 .nav-links {
   display: flex;

@@ -338,9 +338,15 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   const wrap = canvas.parentElement;
   const size = () => Math.min(wrap.clientWidth, wrap.clientHeight);
 
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  } catch (e) {
+    return; // no WebGL — keep the static fallback image
+  }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(size(), size());
+  document.body.classList.add('webgl-ok'); // hide static fallback
 
   const scene  = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
@@ -697,9 +703,10 @@ function showToast(msg, duration = 3000) {
   document.body.style.opacity = '0';
   document.body.style.transition = 'opacity 0.8s ease';
 
-  window.addEventListener('load', () => {
-    requestAnimationFrame(() => {
-      document.body.style.opacity = '1';
-    });
-  });
+  const reveal = () => { document.body.style.opacity = '1'; };
+
+  window.addEventListener('load', reveal);
+  // Fallbacks so the page can NEVER stay blank if a resource stalls/blocks
+  document.addEventListener('DOMContentLoaded', () => setTimeout(reveal, 400));
+  setTimeout(reveal, 1500);
 })();
