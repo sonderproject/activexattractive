@@ -19,21 +19,455 @@
       <a href="#" class="logo">
         <img src="assets/logo-monogram.png" alt="Active &amp; Attractive" class="logo-img" />
       </a>
+      <ul class="nav-links">
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#drops">New Drops</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- ───── HERO (centered spinning 3D logo) ───── -->
+  <!-- ───── MOBILE MENU ───── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#collections" class="mobile-link">Collections</a></li>
+      <li><a href="#drops" class="mobile-link">New Drops</a></li>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ───── HERO ───── -->
   <section id="hero" class="hero">
-    <div class="hero-content">
+    <div class="hero-content" data-parallax="0.3">
+      <p class="hero-eyebrow reveal-up">Urban Collection 2026</p>
       <div class="hero-logo-wrap reveal-up" data-delay="0.05">
         <canvas id="hero-logo-canvas"></canvas>
         <img src="assets/hero-logo-3d.png" alt="Active &amp; Attractive" class="hero-logo-fallback" />
       </div>
+      <h1 class="hero-headline reveal-up" data-delay="0.1">
+        <span class="word">ACTIVE</span>
+        <span class="word accent">&amp;</span>
+        <span class="word">ATTRACTIVE</span>
+      </h1>
       <p class="hero-sub reveal-up" data-delay="0.2">
-        Premium urban clothing — coming soon.
+        Where street culture meets premium craft. Wear the city.
       </p>
+      <div class="hero-ctas reveal-up" data-delay="0.3">
+        <a href="#collections" class="btn-primary">Shop Now</a>
+        <a href="#drops" class="btn-ghost">New Drops</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
+
+  <!-- ───── MARQUEE TICKER ───── -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>ACTIVE &amp; ATTRACTIVE</span>
+      <span>·</span>
+      <span>URBAN CULTURE</span>
+      <span>·</span>
+      <span>PREMIUM STREETWEAR</span>
+      <span>·</span>
+      <span>NEW YORK CITY</span>
+      <span>·</span>
+      <span>ACTIVE &amp; ATTRACTIVE</span>
+      <span>·</span>
+      <span>URBAN CULTURE</span>
+      <span>·</span>
+      <span>PREMIUM STREETWEAR</span>
+      <span>·</span>
+      <span>NEW YORK CITY</span>
+      <span>·</span>
+      <span>ACTIVE &amp; ATTRACTIVE</span>
+      <span>·</span>
+      <span>URBAN CULTURE</span>
+      <span>·</span>
+    </div>
+  </div>
+
+  <!-- ───── COLLECTIONS ───── -->
+  <section id="collections" class="collections">
+    <div class="section-header reveal-up">
+      <span class="section-tag">Collections</span>
+      <h2>Curated for the Streets</h2>
+    </div>
+
+    <div class="collection-grid">
+      <!-- Card 1 -->
+      <div class="col-card reveal-card" data-tilt>
+        <div class="col-card-img" style="background-image:url('https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=800&q=80')">
+          <div class="col-card-overlay">
+            <span class="col-tag">Essentials</span>
+          </div>
+        </div>
+        <div class="col-card-body">
+          <h3>Midnight Essentials</h3>
+          <p>Core pieces built for everyday wear. Versatile, clean, relentless.</p>
+          <div class="col-card-footer">
+            <span class="price">From $48</span>
+            <a href="#" class="link-arrow">Shop <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 - featured -->
+      <div class="col-card col-card--featured reveal-card" data-delay="0.1" data-tilt>
+        <div class="col-card-img" style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80')">
+          <div class="col-card-overlay">
+            <span class="col-tag featured-tag">Featured Drop</span>
+          </div>
+        </div>
+        <div class="col-card-body">
+          <h3>A&amp;A Signature Series</h3>
+          <p>Our flagship line. Bold cuts, premium materials, built to last seasons.</p>
+          <div class="col-card-footer">
+            <span class="price">From $95</span>
+            <a href="#" class="link-arrow">Shop <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-card reveal-card" data-delay="0.2" data-tilt>
+        <div class="col-card-img" style="background-image:url('https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=800&q=80')">
+          <div class="col-card-overlay">
+            <span class="col-tag">Street</span>
+          </div>
+        </div>
+        <div class="col-card-body">
+          <h3>Block Ready</h3>
+          <p>Oversized silhouettes. Statement graphics. Made for the block.</p>
+          <div class="col-card-footer">
+            <span class="price">From $62</span>
+            <a href="#" class="link-arrow">Shop <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── 3D PRODUCT SHOWCASE ───── -->
+  <section id="showcase" class="showcase">
+    <div class="showcase-inner">
+      <div class="showcase-text reveal-left">
+        <span class="section-tag">Craftsmanship</span>
+        <h2>Every Thread Intentional</h2>
+        <p>We source premium urban fabrics — heavyweight cotton, brushed fleece, technical weaves — designed to move with you and outlast every trend.</p>
+        <ul class="feature-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Premium heavyweight cotton</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Limited-run colorways</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Ethically produced</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Drop-model exclusives</li>
+        </ul>
+        <a href="#collections" class="btn-primary">Explore Materials</a>
+      </div>
+      <div class="showcase-3d reveal-right" id="product-canvas-wrap">
+        <canvas id="product-canvas"></canvas>
+        <div class="canvas-label">Drag to rotate</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── NEW DROPS ───── -->
+  <section id="drops" class="drops">
+    <div class="section-header reveal-up">
+      <span class="section-tag">New Drops</span>
+      <h2>Just Landed</h2>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card reveal-card" data-delay="0">
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80" alt="AA Hoodie Black" loading="lazy" />
+          <div class="product-actions">
+            <button class="quick-add" data-name="A&A Classic Hoodie" data-price="89">Quick Add</button>
+          </div>
+          <span class="product-badge">New</span>
+        </div>
+        <div class="product-info">
+          <h4>A&amp;A Classic Hoodie</h4>
+          <div class="product-meta">
+            <span class="product-price">$89</span>
+            <div class="color-dots">
+              <span class="dot" style="background:#000"></span>
+              <span class="dot" style="background:#1e3a8a"></span>
+              <span class="dot" style="background:#374151"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal-card" data-delay="0.1">
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80" alt="Street Jacket" loading="lazy" />
+          <div class="product-actions">
+            <button class="quick-add" data-name="Urban Shell Jacket" data-price="145">Quick Add</button>
+          </div>
+          <span class="product-badge">Hot</span>
+        </div>
+        <div class="product-info">
+          <h4>Urban Shell Jacket</h4>
+          <div class="product-meta">
+            <span class="product-price">$145</span>
+            <div class="color-dots">
+              <span class="dot" style="background:#000"></span>
+              <span class="dot" style="background:#1e40af"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal-card" data-delay="0.2">
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80" alt="Tech Joggers" loading="lazy" />
+          <div class="product-actions">
+            <button class="quick-add" data-name="Tech Joggers" data-price="72">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h4>Tech Joggers</h4>
+          <div class="product-meta">
+            <span class="product-price">$72</span>
+            <div class="color-dots">
+              <span class="dot" style="background:#111827"></span>
+              <span class="dot" style="background:#1e3a8a"></span>
+              <span class="dot" style="background:#6b7280"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal-card" data-delay="0.3">
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&q=80" alt="A&A Tee" loading="lazy" />
+          <div class="product-actions">
+            <button class="quick-add" data-name="A&A Signature Tee" data-price="48">Quick Add</button>
+          </div>
+          <span class="product-badge sale-badge">Sale</span>
+        </div>
+        <div class="product-info">
+          <h4>A&amp;A Signature Tee</h4>
+          <div class="product-meta">
+            <span class="product-price">$48 <s class="old-price">$65</s></span>
+            <div class="color-dots">
+              <span class="dot" style="background:#000"></span>
+              <span class="dot" style="background:#fff;border:1px solid #333"></span>
+              <span class="dot" style="background:#1d4ed8"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── FULL-WIDTH BANNER ───── -->
+  <section class="parallax-banner" id="banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content reveal-up">
+      <p class="banner-eyebrow">Limited Drop — Summer 2026</p>
+      <h2 class="banner-headline">THE CITY<br/>NEVER SLEEPS</h2>
+      <a href="#drops" class="btn-primary btn-large">Get Yours Now</a>
+    </div>
+  </section>
+
+  <!-- ───── STATS ───── -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item reveal-up">
+        <span class="stat-num" data-target="50000">0</span><span class="stat-unit">+</span>
+        <p>Units Sold</p>
+      </div>
+      <div class="stat-item reveal-up" data-delay="0.1">
+        <span class="stat-num" data-target="120">0</span><span class="stat-unit">+</span>
+        <p>Cities Worldwide</p>
+      </div>
+      <div class="stat-item reveal-up" data-delay="0.2">
+        <span class="stat-num" data-target="48">0</span><span class="stat-unit">hr</span>
+        <p>Avg. Drop Sellout</p>
+      </div>
+      <div class="stat-item reveal-up" data-delay="0.3">
+        <span class="stat-num" data-target="98">0</span><span class="stat-unit">%</span>
+        <p>Customer Satisfaction</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── ABOUT ───── -->
+  <section id="about" class="about">
+    <div class="about-inner">
+      <div class="about-img reveal-left">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900&q=80" alt="Active and Attractive store" />
+        <div class="about-img-accent"></div>
+      </div>
+      <div class="about-text reveal-right">
+        <span class="section-tag">Our Story</span>
+        <h2>Born in the City. Built for Everyone.</h2>
+        <p>Active &amp; Attractive started as a dream between two friends on a Brooklyn rooftop — a vision for clothing that captured the energy of urban life without sacrificing premium quality.</p>
+        <p>We create pieces that blur the line between streetwear and luxury. Every drop is intentional. Every colorway chosen. Every stitch a statement.</p>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── TESTIMONIALS ───── -->
+  <section class="testimonials">
+    <div class="section-header reveal-up">
+      <span class="section-tag">Reviews</span>
+      <h2>The Culture Speaks</h2>
+    </div>
+    <div class="testimonial-track-wrap">
+      <div class="testimonial-track">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"These pieces hit different. The hoodie quality is unreal — I've washed it 30+ times and it still looks fresh."</p>
+          <span class="reviewer">— Marcus T., NYC</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"A&amp;A is the only brand I restock. The Signature Series is premium streetwear done right."</p>
+          <span class="reviewer">— Destiny R., Atlanta</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Got the Shell Jacket in blue and it's everything. Copped two more for my crew immediately."</p>
+          <span class="reviewer">— Jamal K., Chicago</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"The drops sell out fast for a reason. Set a reminder and don't sleep on these collections."</p>
+          <span class="reviewer">— Priya M., LA</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Best urban brand I've found. The fit is perfect, the quality is premium, and the style is unmatched."</p>
+          <span class="reviewer">— Dre B., Houston</span>
+        </div>
+        <!-- duplicate for seamless loop -->
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"These pieces hit different. The hoodie quality is unreal — I've washed it 30+ times and it still looks fresh."</p>
+          <span class="reviewer">— Marcus T., NYC</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"A&amp;A is the only brand I restock. The Signature Series is premium streetwear done right."</p>
+          <span class="reviewer">— Destiny R., Atlanta</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── NEWSLETTER ───── -->
+  <section id="contact" class="newsletter">
+    <div class="newsletter-inner reveal-up">
+      <span class="section-tag">Stay Connected</span>
+      <h2>Be First to the Drop</h2>
+      <p>Join the A&amp;A community and get exclusive early access to every new collection.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit" class="btn-primary">Subscribe</button>
+      </form>
+      <p class="newsletter-fine">No spam, ever. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- ───── FOOTER ───── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo footer-logo">
+        <img src="assets/logo-heart-dark.png" alt="Active &amp; Attractive" class="logo-img footer-logo-img" />
+      </a>
+        <p>Premium Urban Clothing<br/>Est. 2022 · New York City</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter/X">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Gift Cards</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">Sizing Guide</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Brand</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Active &amp; Attractive. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ───── CART DRAWER ───── -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <strong id="cartTotal">$0</strong></div>
+      <button class="btn-primary checkout-btn">Checkout</button>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- ───── TOAST ───── -->
+  <div class="toast" id="toast"></div>
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
