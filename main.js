@@ -366,7 +366,7 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
   /* Load the brand asset as a texture */
   const loader = new THREE.TextureLoader();
-  loader.load('assets/logo-heart-light.png', (texture) => {
+  loader.load('assets/hero-logo-3d.png', (texture) => {
     texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
 
     const img = texture.image;
