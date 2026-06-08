@@ -350,7 +350,7 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
   const scene  = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
-  camera.position.set(0, 0, 7);
+  camera.position.set(0, 0, 6);
 
   /* Lighting — chrome / steel-blue rig */
   scene.add(new THREE.AmbientLight(0xffffff, 0.55));
@@ -377,7 +377,7 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
     const img = texture.image;
     const aspect = img.width / img.height;
-    const h = 4.2;
+    const h = 5.4;
     const w = h * aspect;
 
     /* Front + back faces of the logo */

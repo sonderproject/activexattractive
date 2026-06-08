@@ -103,9 +103,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .hero-logo-wrap {
   position: relative;
-  margin-bottom: 1rem;
-  width: clamp(220px, 32vw, 380px);
-  height: clamp(220px, 32vw, 380px);
+  margin-bottom: 1.5rem;
+  width: min(85vw, 70vh, 760px);
+  height: min(85vw, 70vh, 760px);
 }
 #hero-logo-canvas {
   position: relative;
@@ -309,7 +309,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--nav-h) + 2rem) 2rem 6rem;
+  justify-content: center;
+  text-align: center;
+  padding: var(--nav-h) 1.5rem 2rem;
   overflow: hidden;
 }
 
@@ -322,8 +324,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .hero-content {
-  max-width: 1400px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
