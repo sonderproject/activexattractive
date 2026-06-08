@@ -327,6 +327,133 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 })();
 
 /* ══════════════════════════════════════════════
+   2b. HERO SPINNING 3D LOGO
+   Uploaded brand asset (heart logo) mapped onto a
+   thin 3D card that continuously rotates.
+══════════════════════════════════════════════ */
+(function initHeroLogo() {
+  const canvas = qs('#hero-logo-canvas');
+  if (!canvas || !window.THREE) return;
+
+  const wrap = canvas.parentElement;
+  const size = () => Math.min(wrap.clientWidth, wrap.clientHeight);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(size(), size());
+
+  const scene  = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+  camera.position.set(0, 0, 7);
+
+  /* Lighting — chrome / steel-blue rig */
+  scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+
+  const key = new THREE.DirectionalLight(0xffffff, 1.6);
+  key.position.set(3, 4, 5);
+  scene.add(key);
+
+  const rim = new THREE.DirectionalLight(0x5b8db8, 1.8);
+  rim.position.set(-4, -1, -3);
+  scene.add(rim);
+
+  const spot = new THREE.PointLight(0x7fb3d8, 1.2, 20);
+  spot.position.set(0, 0, 5);
+  scene.add(spot);
+
+  const group = new THREE.Group();
+  scene.add(group);
+
+  /* Load the brand asset as a texture */
+  const loader = new THREE.TextureLoader();
+  loader.load('assets/logo-heart-light.png', (texture) => {
+    texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+
+    const img = texture.image;
+    const aspect = img.width / img.height;
+    const h = 4.2;
+    const w = h * aspect;
+
+    /* Front + back faces of the logo */
+    const planeGeo = new THREE.PlaneGeometry(w, h);
+    const faceMat = new THREE.MeshStandardMaterial({
+      map: texture,
+      transparent: true,
+      alphaTest: 0.05,
+      roughness: 0.35,
+      metalness: 0.65,
+      side: THREE.DoubleSide,
+      emissive: 0x1a3048,
+      emissiveMap: texture,
+      emissiveIntensity: 0.25,
+    });
+
+    const front = new THREE.Mesh(planeGeo, faceMat);
+    front.position.z = 0.12;
+    group.add(front);
+
+    const back = new THREE.Mesh(planeGeo, faceMat.clone());
+    back.position.z = -0.12;
+    back.rotation.y = Math.PI;
+    group.add(back);
+
+    /* Thin chrome edge band for depth between the faces */
+    const edgeMat = new THREE.MeshStandardMaterial({
+      color: 0x8fa8b8, metalness: 0.95, roughness: 0.15,
+      transparent: true, alphaTest: 0.05, map: texture, side: THREE.DoubleSide,
+    });
+    const edge = new THREE.Mesh(planeGeo, edgeMat);
+    edge.scale.set(0.985, 0.985, 1);
+    group.add(edge);
+  });
+
+  /* Drag to influence spin */
+  let isDragging = false, prevX = 0, vel = 0.012;
+  const press = x => { isDragging = true; prevX = x; };
+  const release = () => { isDragging = false; };
+  canvas.addEventListener('mousedown', e => press(e.clientX));
+  canvas.addEventListener('touchstart', e => press(e.touches[0].clientX), { passive: true });
+  window.addEventListener('mouseup', release);
+  window.addEventListener('touchend', release);
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    vel = (e.clientX - prevX) * 0.004;
+    prevX = e.clientX;
+  });
+  window.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    vel = (e.touches[0].clientX - prevX) * 0.004;
+    prevX = e.touches[0].clientX;
+  }, { passive: true });
+
+  /* Resize */
+  new ResizeObserver(() => {
+    const s = size();
+    renderer.setSize(s, s);
+  }).observe(wrap);
+
+  /* Animate */
+  let t = 0;
+  (function loop() {
+    requestAnimationFrame(loop);
+    t += 0.016;
+
+    if (!isDragging) {
+      // ease back toward steady auto-spin
+      vel += (0.012 - vel) * 0.03;
+    }
+    group.rotation.y += vel;
+    group.rotation.x = Math.sin(t * 0.6) * 0.12;   // gentle bob
+    group.position.y = Math.sin(t) * 0.1;
+
+    spot.position.x = Math.cos(t) * 4;
+    spot.intensity  = 1 + Math.abs(Math.sin(t * 0.8)) * 0.8;
+
+    renderer.render(scene, camera);
+  })();
+})();
+
+/* ══════════════════════════════════════════════
    3. NAV SCROLL BEHAVIOUR
 ══════════════════════════════════════════════ */
 (function initNav() {
