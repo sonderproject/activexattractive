@@ -783,8 +783,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: clamp(3rem, 8vw, 7rem);
   letter-spacing: 6px;
   line-height: 0.95;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   color: var(--white);
+}
+
+.banner-sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 380px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
 }
 
 /* ════ STATS ════ */
