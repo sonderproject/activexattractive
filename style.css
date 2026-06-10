@@ -114,6 +114,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   height: 100%;
   display: block;
   filter: drop-shadow(0 0 40px rgba(91,141,184,0.45));
+  mix-blend-mode: screen;
   cursor: grab;
 }
 #hero-logo-canvas:active { cursor: grabbing; }
@@ -127,6 +128,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 0 40px rgba(91,141,184,0.45));
+  mix-blend-mode: screen;
   animation: heroPulse 4s ease-in-out infinite;
 }
 .webgl-ok .hero-logo-fallback { display: none; }
