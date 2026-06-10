@@ -94,6 +94,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 12px rgba(91, 141, 184, 0.5));
+  mix-blend-mode: screen;
   transition: filter 0.3s;
 }
 .logo:hover .logo-img { filter: drop-shadow(0 0 20px rgba(127, 179, 216, 0.8)); }
